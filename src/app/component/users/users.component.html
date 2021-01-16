@@ -1,0 +1,40 @@
+<div class="container is-fullhd">
+    <div class="notification is-link">
+      <p class="hclass">Assignment</p>
+    </div>
+  </div>
+
+ 
+<div class="container" id="tclass">
+    <table class="table" *ngIf="users.length>0; else noUser">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td appHighlighter>{{user.email}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+
+<ng-template #noUser>
+    <div class="container">
+    <div class="notification is-primary">
+        <p>No users available !!</p>
+    </div>
+    </div>
+</ng-template>
+
+
+
+
+
